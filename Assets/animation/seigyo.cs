@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class seigyo : MonoBehaviour
 {
+    private Animator anim = null;
     // Start is called before the first frame update
-    Animator animator;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -15,15 +15,13 @@ public class seigyo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown("a"))
         {
-            animator.SetTrigger("attack");
+            anim.SetBool("attack", true);
         }
-        //else
+        else
         {
-            //animator.SetTriggerl("attack");
+            anim.SetBool("attack", false);
         }
-        
-        
     }
 }
